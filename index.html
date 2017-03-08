@@ -2,24 +2,24 @@
 <html lang="en">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
 	<head>
-                <meta charset="utf-8">
+            <meta charset="utf-8">
  		<title>Las Antipodas</title>
 		<style>
 			#map {
 				width:500px;
 				height: 400px;
 			}
-                        #anti {
-                                width:500px;
-				height: 400px;
-                        }
- 		</style>
+                  #anti {
+                        width:500px;
+                        height: 400px;
+                  }
+            </style>
  	</head>
 	<body>
-                <p> Your Location </p>
-        	<p id='map'></p>
-                <p> Later of dig from your location :) </p>
-                <p id='anti'></p>
+            <p> Your Location </p>
+            <p id='map'></p>
+            <p> Later of dig from your location :) </p>
+            <p id='anti'></p>
   	        <script type="text/javascript" charset="utf-8">
                         function show_map (position) {
                                 var latitude = position.coords.latitude;
@@ -37,17 +37,14 @@
                                         zoom: 5
                                 })
                         }
-
                         var options = {
                                 enableHighAccuracy: true,
                                 timeout: 5000,
                                 maximumAge: 0
                         };
-
                         function error(err) {
                                 console.warn(`ERROR(${err.code}): ${err.message}`);
                         };
-
                         function get_location() {
                                 if (Modernizr.geolocation) {
                                         navigator.geolocation.getCurrentPosition(show_map, error, options);
@@ -55,7 +52,7 @@
                                         alert('not supported');
                                 }
                         }
- 		</script
+ 		</script>
 		<script src = "https://maps.googleapis.com/maps/api/js?callback=get_location" async defer></script>
 	</body>
 </html>
